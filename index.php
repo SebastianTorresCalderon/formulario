@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario - CV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">                
 </head>
 <body>
     <form method="post" autocomplete="off">
@@ -74,8 +74,21 @@
                    
                 </datalist>
             </div>
+
+
             <div class="input-container">
-                <textarea name="profile" placeholder="Perfil">Rellene con su perfil</textarea>
+                <input list="habilitys" name="hability" placeholder="Habilidades">
+                <datalist id="habilitys">
+                    <option value="Deporte">
+                    <option value="Trabajo bajo presión">
+                    <option value="Memoria">
+                    <option value="Flexibilidad">
+                   
+                </datalist>
+            </div>
+
+            <div class="input-container">
+                <textarea name="profile" placeholder="Perfil"></textarea>
             </div>
 
             <input name="send" type="submit" class="btn" value="Enviar">

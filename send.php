@@ -11,8 +11,9 @@ if(isset($_POST['send'])){ //verifica si es que se envió el formulario
         strlen($_POST['contact_email'])>=1 &&  //verificar que todos los campos sean llenados
         strlen($_POST['nationality'])>=1 &&
         strlen($_POST['english_level'])>=1 &&
-        isset($_POST['interests']) && 
-        isset($_POST['aptitude']) && 
+        isset($_POST['interests']) &&
+        isset($_POST['aptitude']) &&
+        isset($_POST['hability']) &&
         strlen($_POST['profile'])>=1 
     ) {
         $name = trim($_POST['name']);
@@ -24,10 +25,10 @@ if(isset($_POST['send'])){ //verifica si es que se envió el formulario
         $english_level = trim($_POST['english_level']);
         $interests = implode(", ", $_POST['interests']); 
         $aptitude = trim($_POST['aptitude']);
-        $profile = trim($_POST['profile']); 
-        $fecha = date("d/m/y");                                                         //envío a mysql
-        $consulta = "INSERT INTO datos(nombre, fecha_de_nacimiento, ocupacion, telefono, email, nacionalidad, nivel_ingles, intereses, aptitud, perfil, fecha)
-                        VALUES('$name', '$birthdate', '$ocupation', '$contact_phone', '$contact_email', '$nationality', '$english_level', '$interests', '$aptitude', '$profile', '$fecha')";
+        $hability = trim($_POST['hability']);
+        $profile = trim($_POST['profile']);                                                        //envío a mysql
+        $consulta = "INSERT INTO datos(nombre, fecha_de_nacimiento, ocupacion, telefono, email, nacionalidad, nivel_ingles, intereses, aptitud, habilidad, perfil)
+                        VALUES('$name', '$birthdate', '$ocupation', '$contact_phone', '$contact_email', '$nationality', '$english_level', '$interests', '$aptitude','$hability', '$profile')";
 
         $resultado = mysqli_query($conex, $consulta);
         if($resultado){ 
